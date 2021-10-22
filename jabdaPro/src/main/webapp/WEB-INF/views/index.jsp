@@ -1,26 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% String rootPath = request.getContextPath(); %>    
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
   	<title>MainPage</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<jsp:include page=""></jsp:include>
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
   </head>
   <body>
 		
 		<div class="wrapper d-flex align-items-stretch">
-		
+		<jsp:include page=""></jsp:include>
 
         <!-- Page Content  -->
-      <div id="content" class="p-4 p-md-5 pt-5">
+      	<div id="content" class="p-4 p-md-5 pt-5">
         
         <!-- slider_area_start -->
-      
+      	<jsp:include page=""></jsp:include>
         <!-- slider_area_end -->
         
         <div class="test-content">

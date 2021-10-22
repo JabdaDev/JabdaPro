@@ -164,6 +164,8 @@ public class jabdaController {
 		return modelAndView;
 	}
 	
+	
+	
 	/* join_ok */
 	@RequestMapping( "/join_ok.do" )
 	public ModelAndView join_ok(HttpServletRequest request, UserTO to) throws NoSuchAlgorithmException, UnsupportedEncodingException {
