@@ -21,7 +21,7 @@
 
 %>
 		
-<script src="./assets/js/nav.js"></script>
+<script src="./assets/js/nav.js"></script>d
 <div class="v_scroll"></div>
 <!-- Full screen modal -->
 <div class="modal fade" id="full_search" tabindex="-1" style="display: none;" aria-hidden="true">
