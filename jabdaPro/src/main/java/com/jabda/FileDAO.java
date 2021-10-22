@@ -1,4 +1,4 @@
-package com.itmi;
+package com.jabda;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,9 +23,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-
-import com.product.ProductTO;
-import com.review.ReviewTO;
 
 @Repository
 public class FileDAO {

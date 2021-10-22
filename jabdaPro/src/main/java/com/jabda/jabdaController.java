@@ -1,4 +1,4 @@
-package com.itmi;
+package com.jabda;
 
 import java.io.File;
 import java.io.IOException;
@@ -169,23 +169,13 @@ public class jabdaController {
 	public ModelAndView join_ok(HttpServletRequest request, UserTO to) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		System.out.println( "join_ok() 호출" );
 		
-		
+		String nickname = request.getParameter( "nickname" );
 		String email = request.getParameter( "email" );
 		String password = request.getParameter( "password" );
-		String phone = request.getParameter( "phone1" ) + request.getParameter( "phone2" ) + request.getParameter( "phone3" );
-		String nickname = request.getParameter( "nickname" );
-		String[] temp = request.getParameterValues( "check_product" );
-		String interest = "";
-		for(int i = 0; i < temp.length; i++) {
-			interest += "," +temp[i];
-		}
-		interest = interest.substring(1);
 		
+		to.setNickname( nickname );
 		to.setEmail( email );
 		to.setPassword( password );
-		to.setPhone( phone );
-		to.setNickname( nickname );
-		to.setInterest( interest );
 		
 		int flag = this.udao.join_ok(to);
 		// System.out.println("flag : " + flag);
@@ -195,15 +185,15 @@ public class jabdaController {
 		modelAndView.addObject("join_flag", flag);
 		return modelAndView;
 	}
-	/* nav */
-	@RequestMapping( "/include/nav.do" )
-	public ModelAndView nav(HttpServletRequest request) {
-		System.out.println( "nav() 호출" );
+	/* sidebar */
+	@RequestMapping( "/include/sidebar.do" )
+	public ModelAndView sidebar(HttpServletRequest request) {
+		System.out.println( "sidebar() 호출" );
 
 		// 로그인된 회원의 정보를 가져오고 보여주는 부분  
 				// 로그인 세션이 있으면 가져온다.
 				HttpSession httpSession = request.getSession(true);
-				System.out.println( "nav() 호출1" );
+				System.out.println( "sidebar() 호출1" );
 				UserTO uto =  (UserTO)httpSession.getAttribute("user"); // 로그인 정보를 가져오는것
 				int flag = 1; // 기본 : 실패
 					if(uto != null) {
@@ -214,7 +204,7 @@ public class jabdaController {
 					
 				//여기까지
 		
-		ModelAndView modelAndView = new ModelAndView( "include/nav" );
+		ModelAndView modelAndView = new ModelAndView( "include/sidebar" );
 		modelAndView.addObject("uto", uto); // 유저정보를 들고가는것 , 다른페이지에서 보여줄때도 무조건 가져가야함
 		// modelAndView.addObject("uto", uto); -> 이것을 무조건 가지고 들어가야함
 		// 왜냐하면 uto안에 있는 "uto"라는 키값으로 회원의 정보를 가져오는 부분이라서 보여주고자 하는 페이지에 꼭필요함

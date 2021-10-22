@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>MainPage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(img/background.jpg);">
+	  			<div class="user-logo">
+	  				<div class="img" style="background-image: url(img/allbackground.png);"></div>
+	  				<h3>반갑습니다!</h3>
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="index.html"><span class="fa fa-home mr-3"></span> Home </a>
+          </li>
+          <li>
+              <a href="community.html"><span class="fa fa-comments mr-3 notif"><small class="d-flex align-items-center justify-content-center">3</small></span> Community(커뮤니티) </a>
+          </li>
+          <li>
+            <a href="event.html"><span class="fa fa-gift mr-3"></span> Event(이벤트) </a>
+          </li>
+          <li>
+            <a href="testrank.html"><span class="fa fa-trophy mr-3"></span> Top Test</a>
+          </li>
+          <li>
+            <a href="testqna.html"><span class="fa fa-cog mr-3"></span> QnA(고객센터) </a>
+          </li>
+          <li>
+            <a href="jabdadev.html"><span class="fa fa-support mr-3"></span> 개발자소개(잡다한) </a>
+          </li>
+          <li>
+            <a href="login.html"><span class="fa fa-sign-out mr-3"></span> Login </a>
+          </li>
+        </ul>
+        <footer>
+
+        </footer>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+        
+        <!-- slider_area_start -->
+      <div class="jabda-slider">
+        <div class="text-center">
+            <h3 class="jabda-slider-logo">
+                <a href="index.html">
+                    <img src="img/mainlogo.png" alt="">
+                </a>
+            </h3>
+            <!-- search button -->
+            <div class="jabda-group mb-3">
+                <form action="search.html" method="POST">
+                    <div>
+                        <input type="text" class="form-control" id="search-box" placeholder="잡다한 테스트 검색하기..." aria-label="Search" aria-describedby="button-addon2">
+                        <!-- <button class="btn btn-outline-warning" type="submit" id="btn-search"><i class="bi bi-search"></i></button> -->
+                    </div>
+                </form> 
+            </div>
+            <div class="jabda-group mb-3 sns-icon">
+                <ul>
+                    <li><a id="btnTwitter" class="btn btn-icon" style="background-color: #ac2bac69;" href="javascript:shareTwitter();" role="button"><i class="fa fa-instagram"></i></a></li>
+                    <li><a id="btnFacebook" class="btn btn-icon" style="background-color: rgb(13 110 253 / 45%)" href="javascript:shareTwitter();" role="button"><i class="fa fa-twitter"></i></a></li>
+                    <li><a id="btnInsta" class="btn btn-icon" style="background-color: rgb(13 110 253 / 25%)" href="javascript:shareInsta();"  role="button"><i class="fa fa-facebook-square"></i></a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <!-- slider_area_end -->
+        
+        <div class="test-content">
+          <div class="text-center">
+            <div class="test-detail mb-4">
+              <table class="table">
+                <thead>
+                  <td>Image</td>
+                  <td>TestName</td>
+                  <td>개발자</td>
+                  <td>조회수</td>
+                  <td>바로가기</td>
+                </thead>
+                <tbody class="jabda-test-list">
+                  <tr>
+                    <td><img src="/img/test.png"></td>
+                    <td>내 손은 이쁜 손일까?</td>
+                    <td>잡다한 개발자</td>
+                    <td></td>
+                    <td><a type="button" href="testOne.html" class="btn btn-outline-primary"> Go </a></td>
+                  </tr>
+                  <tr>
+                    <td><img src="/img/test.png"></td>
+                    <td>간단한 MBTI</td>
+                    <td>잡다한 개발자</td>
+                    <td></td>
+                    <td><a type="button" href="testTwo.html" class="btn btn-outline-primary"> Go </a></td>
+                  </tr>
+                </tbody>
+              </table> 
+            </div>
+          </div>
+        </div>
+
+      </div>
+    
+
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
