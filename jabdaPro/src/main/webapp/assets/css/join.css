@@ -1,0 +1,194 @@
+@charset "utf-8";
+@import url("./nav.css");
+.row{
+	--bs-gutter-x: none;
+}
+.g-signin2{
+	display: flex;
+	justify-content: center;	
+}
+
+[name="frm_reg"]{
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.form-control{
+    border: none;
+    border-bottom: 1px solid #4B5AB4;
+    border-radius: 0px;
+}
+.phone_number{
+    display: inline-block;
+}
+
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+} */
+
+#check_all{
+    margin-left: 10px;
+}
+
+.check_box > div{
+    display: inline-block;
+    margin:0px 5px;
+}
+.check_box{
+    margin-bottom: 15px;
+}
+
+[for="email"],
+[for="password"],
+[for="repassword"],
+[for="nickname"],
+[for="phone_number"],
+[for="favorite_product"],
+[for="check"]{
+    text-align: left;
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    font-size: 12px;
+    color: #4B5AB4;
+    margin: 15px 0px;
+}
+[for="check"]{
+    display: inline;
+}
+[for="check_all"],
+#check_all{
+    text-align: right;
+}
+
+#check_all,
+#check_age,
+#check_agreement,
+#check_info{
+    
+    width: 20px;
+    height: 20px;
+}
+[for="check"]{
+    display: inline !important;
+}
+#check_age,
+#check_agreement,
+#check_info{
+    margin-left: 10px;
+    float: right;
+    margin: 0px !important;
+}
+.agreement_box{
+    text-align: left;
+    margin: 5px 0px;
+}
+.check_title{
+    display: inline !important;
+}
+.row{
+    margin-top: 20px;
+}
+.btn_complete button{
+    background-color: #4B5AB4;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0px;
+    margin: 10px 0px;
+    
+}
+.reg_text{
+	margin: 15px 0px 10px 0px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.reg_des{
+    text-align: center;
+    font-size: 15px;
+}
+.naverLogin_case{
+    text-align: center;
+}
+.naverLogin{
+    background-color: #03cf5d;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: inline-block;
+}
+.naverLogin div{
+    text-align: center;
+    position: relative;
+    top: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+}
+
+.login_box{
+    text-align: center;
+}
+[type="checkbox"]{
+    text-align: right;
+}
+
+.fail_text{
+    color: transparent;
+    font-size: 10px;
+}
+#email::placeholder,
+#password::placeholder,
+#repassword::placeholder,
+#nickname::placeholder,
+#email_auth{
+    font-size: 12px;
+}
+
+.mail_check,
+.mail_auth{
+	background-color: #4B5AB4;
+	color: #fff;
+	font-size: 12px;
+	border: 0px;
+	padding: 10px;
+	border-radius: 4px;
+	margin: 15px 7px 0px 7px;
+	font-weight: bold;
+}
+.mail_check,
+.email_check{
+	display: none;
+}
+
+@media screen and (max-width: 768px){
+    [for="email"],
+    [for="password"],
+    [for="repassword"],
+    [for="nickname"],
+    [for="phone_number"],
+    [for="favorite_product"],
+    [for="check"]{
+        display: block;
+        width: 100%;
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+
+    [name="phone1"]::placeholder,
+    [name="phone2"]::placeholder,
+    [name="phone3"]::placeholder{ 
+        font-size:12px;
+    }
+    div.phone_number{
+        width: 60px;
+        margin-right: 5px;
+    }
+}
+

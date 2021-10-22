@@ -1,0 +1,64 @@
+@charset "utf-8";
+@import url("./nav.css");
+
+
+.card {
+    display:block;
+    margin:0 auto;
+    width:100%;
+}
+
+
+
+.board-box {
+	border: 1px solid lightslategray;
+}
+
+.imgbox {
+    display: flex;
+    width:100%;
+    margin-top: 100px;
+}
+
+.card-title-small {
+    color:gray;
+}
+
+
+.heartbtn {
+    background-color:skyblue;
+    border-radius: 25px;
+    width:80px;
+    height: 32px;
+    border-style: none;
+}
+
+.hearttxt {
+    color: white;
+    text-align: center;
+}
+
+.likeimg {
+    width:30px;
+}
+
+@media all and (min-width:200px) and (max-width:760px) {
+	.frontimg {
+		display:flex;
+		width:70%;
+		margin:0 auto;
+	}
+	
+	.imgbox {
+		display: flex;
+	    width: 50%;
+	    margin-top: 100px;
+	    flex-direction: column;
+	    margin:0 auto;
+	}
+	
+	.board-box {
+		border: 1px solid lightslategray;
+	    height: 90%;
+	}
+}
