@@ -7,19 +7,19 @@
   	<title>MainPage</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<jsp:include page=""></jsp:include>
+	<jsp:include page="/include/css.do"></jsp:include>
 
   </head>
   <body>
 		
 		<div class="wrapper d-flex align-items-stretch">
-		<jsp:include page=""></jsp:include>
+		<jsp:include page="/include/sidebar.do"></jsp:include>
 
         <!-- Page Content  -->
       	<div id="content" class="p-4 p-md-5 pt-5">
         
         <!-- slider_area_start -->
-      	<jsp:include page=""></jsp:include>
+      	<jsp:include page="/include/mainlogo.do"></jsp:include>
         <!-- slider_area_end -->
         
         <div class="test-content">
@@ -59,9 +59,6 @@
 
     </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <jsp:include page="include/js.do"></jsp:include>
   </body>
 </html>

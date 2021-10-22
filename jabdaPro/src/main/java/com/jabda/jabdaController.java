@@ -187,6 +187,7 @@ public class jabdaController {
 		modelAndView.addObject("join_flag", flag);
 		return modelAndView;
 	}
+	
 	/* sidebar */
 	@RequestMapping( "/include/sidebar.do" )
 	public ModelAndView sidebar(HttpServletRequest request) {
@@ -213,4 +214,30 @@ public class jabdaController {
 		return modelAndView;
 	}
 	
+	/* mainlogo */
+	@RequestMapping( "include/mainlogo.do" )
+	public ModelAndView mainlogo(HttpServletRequest request) {
+		System.out.println("mainlogo() 호출");
+		
+		ModelAndView modelAndView = new ModelAndView("/include/mainlogo");
+		return modelAndView;
+	}
+	
+	/* css part */
+	@RequestMapping( "include/css.do" )
+	public ModelAndView css(HttpServletRequest request) {
+		System.out.println("css() 호출");
+		
+		ModelAndView modelAndView = new ModelAndView("/include/css");
+		return modelAndView;
+	}
+	
+	/* js part */
+	@RequestMapping("include/js")
+	public ModelAndView js(HttpServletRequest request) {
+		System.out.println("js() 호출");
+		
+		ModelAndView modelAndView = new ModelAndView("/include/js");
+		return modelAndView;
+	}
 }
