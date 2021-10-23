@@ -30,7 +30,14 @@
 	  		<div class="img bg-wrap text-center py-4" style="background-image: url(<%=rootPath %>/assets/img/background.jpg);">
 	  			<div class="user-logo">
 	  				<div class="img" style="background-image: url(<%=rootPath%>/assets/img/allbackground.png);"></div>
-	  				<h3>반갑습니다!</h3>
+	  				<%
+	  					if(username != null) {
+	  						out.println("<h3>" + username + " 반갑습니다.</h3>");
+	  					} else{
+	  						out.println("<h3>로그인 해주세요.</h3>");
+	  					}
+	  				%>
+	  				
 	  			</div>
 	  		</div>
         <ul class="list-unstyled components mb-5">

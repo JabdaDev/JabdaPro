@@ -8386,7 +8386,7 @@ a[data-toggle="collapse"] {
 
 .jabda-slider:after{
   content: "";
-  background: url(/img/header_crop.png), rgba(0, 0, 0, 0.2);
+  background: url(../img/header_crop.png), rgba(0, 0, 0, 0.2);
   background-blend-mode: multiply;
   background-size: cover;
   opacity: 0.9;
