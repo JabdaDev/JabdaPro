@@ -96,8 +96,8 @@ public class jabdaController {
 		String id = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		System.out.println(id);
-		System.out.println(password);
+		//System.out.println(id);
+		//System.out.println(password);
 		UserTO uto = new UserTO();
 		
 		int flag = udao.user(id, password);
@@ -238,6 +238,16 @@ public class jabdaController {
 		System.out.println("js() 호출");
 		
 		ModelAndView modelAndView = new ModelAndView("/include/js");
+		return modelAndView;
+	}
+	
+	
+	/* testrank */
+	@RequestMapping("testrank.do")
+	public ModelAndView testrank(HttpServletRequest request) {
+		System.out.println("testrank() 호출");
+		
+		ModelAndView modelAndView = new ModelAndView("testrank");
 		return modelAndView;
 	}
 }

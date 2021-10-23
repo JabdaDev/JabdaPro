@@ -51,7 +51,7 @@
             <a href="event.html"><span class="fa fa-gift mr-3"></span> Event(이벤트) </a>
           </li>
           <li>
-            <a href="testrank.html"><span class="fa fa-trophy mr-3"></span> Top Test</a>
+            <a href="testrank.do"><span class="fa fa-trophy mr-3"></span> Top Test</a>
           </li>
           <li>
             <a href="testqna.html"><span class="fa fa-cog mr-3"></span> QnA(고객센터) </a>
