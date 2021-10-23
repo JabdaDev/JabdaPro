@@ -43,13 +43,12 @@ public class UserDAO {
 	        
 	        
 			conn = this.dataSource.getConnection();
-			String sql = "insert into user values(0, ?, ?, ?, ?, ?, now(), '일반')";
+			String sql = "insert into user values(0, ?, ?, ?, '일반')";
 			pstmt = conn.prepareStatement( sql );
-			pstmt.setString( 1, to.getEmail() );
-			pstmt.setString( 2, pwhash.toString() );
-			pstmt.setString( 3, to.getPhone() );
-			pstmt.setString( 4, to.getNickname() );
-			pstmt.setString( 5, to.getInterest() );
+			pstmt.setString( 1, to.getNickname() );
+			pstmt.setString( 2, to.getEmail() );
+			pstmt.setString( 3, pwhash.toString() );
+			
 			int result = pstmt.executeUpdate();
 			System.out.println( result );
 			if( result == 1 ) {
@@ -75,7 +74,7 @@ public class UserDAO {
 		System.out.println( "flag1 : " + flag );
 		try {
 			conn = this.dataSource.getConnection();
-			String sql = "select email from user where email = ?";
+			String sql = "select user_email from user where user_email = ?";
 			pstmt = conn.prepareStatement( sql );
 			pstmt.setString( 1, to.getEmail() );
 			rs = pstmt.executeQuery();
@@ -111,7 +110,7 @@ public class UserDAO {
 		int flag = 2;
 		try {
 			conn = this.dataSource.getConnection();
-			String sql = "select nickname from user where nickname = ?";
+			String sql = "select user_nickname from user where user_nickname = ?";
 			pstmt = conn.prepareStatement( sql );
 			pstmt.setString( 1, to.getNickname() );
 			rs = pstmt.executeQuery();
@@ -157,7 +156,7 @@ public class UserDAO {
 	      System.out.println(upw + "넘어온 password값 입니다");
 	      try {
 	         conn = this.dataSource.getConnection();
-	         String sql = "select * from user where email = ? and password = ?";
+	         String sql = "select * from user where user_email = ? and user_pw = ?";
 	         pstmt = conn.prepareStatement( sql );
 	         pstmt.setString(1, id);
 	         pstmt.setString(2, upw);
@@ -198,7 +197,7 @@ public class UserDAO {
 		   
 		   try {
 			   
-			   String SQL = "select password from user where email = ?";
+			   String SQL = "select user_pw from user where user_email = ?";
 			   pstmt = conn.prepareStatement(SQL);
 			   pstmt.setString(1, userID);
 			   rs = pstmt.executeQuery();
@@ -228,7 +227,7 @@ public class UserDAO {
 		   
 		   try {
 			   conn = this.dataSource.getConnection();
-			   String sql = "select seq, email, password, phone, nickname, interest, date from user where email = ?";
+			   String sql = "select seq, user_nickname, user_email, user_password from user where user_email = ?";
 			   pstmt = conn.prepareStatement(sql);
 			   pstmt.setString(1, userID);
 			   rs = pstmt.executeQuery();
@@ -241,12 +240,10 @@ public class UserDAO {
 //				   uto.setUserEmail(rs.getString("userEmail"));
 //				   uto.setUserphone(rs.getString("userphone"));
 				   uto.setSeq(rs.getString("seq"));
-				   uto.setEmail(rs.getString("email"));
-				   uto.setPassword(rs.getString("password"));
-				   uto.setPhone(rs.getString("phone"));
-				   uto.setNickname(rs.getString("nickname"));
-				   uto.setInterest(rs.getString("interest"));
-				   uto.setDate(rs.getString("date"));
+				   uto.setNickname(rs.getString("user_nickname"));
+				   uto.setEmail(rs.getString("user_email"));
+				   uto.setPassword(rs.getString("user_pw"));
+				   
 				   
 //				   System.out.println(rs.getString("nickname")); // 아이디 출력되는거 확인
 				   

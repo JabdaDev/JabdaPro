@@ -59,6 +59,6 @@
 
     </div>
 
-    <jsp:include page="include/js.do"/>
+    <jsp:include page="/include/js.do"/>
   </body>
 </html>

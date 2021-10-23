@@ -233,7 +233,7 @@ public class jabdaController {
 	}
 	
 	/* js part */
-	@RequestMapping("/include/js")
+	@RequestMapping("/include/js.do")
 	public ModelAndView js(HttpServletRequest request) {
 		System.out.println("js() 호출");
 		
