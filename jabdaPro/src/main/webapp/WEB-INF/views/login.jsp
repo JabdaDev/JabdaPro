@@ -35,17 +35,17 @@
                 <img src="<%=rootPath %>/assets/img/gl.png" alt="google">
               </div>
               <form id="login" action="loginAction.do" class="login-input-group" method="post">
-                <input type="text" class="login-input-field" placeholder="User name or Email" id="email" required>
-                <input type="password" class="login-input-field" placeholder="Enter Password" id="password" required>
+                <input type="text" class="login-input-field" placeholder="User name or Email" id="email" name="email" required>
+                <input type="password" class="login-input-field" placeholder="Enter Password" id="password" name="password" required>
                 <input type="checkbox" class="checkbox"><spanL>Remember Password</spanL>
                 <button class="submit">Login</button>
               </form>
-              <form id="register" action="join_ok.do" class="login-input-group" method="post">
-                <input type="text" class="login-input-field" placeholder="User name or Email" id="email" required>
-                <input type="email" class="login-input-field" placeholder="Your Email" id="email" required>
-                <input type="password" class="login-input-field" placeholder="Enter Password" id="password" required>
+              <form id="register" action="./join_ok.do" class="login-input-group" method="get">
+                <input type="text" class="login-input-field" placeholder="User name or Email" id="nickname" name="nickname" required>
+                <input type="email" class="login-input-field" placeholder="Your Email" id="email" name="email" required>
+                <input type="password" class="login-input-field" placeholder="Enter Password" id="password" name="password" required>
                 <input type="checkbox" class="checkbox"><spanL>Terms and conditions</spanL>
-                <button type="button" class="submit">REGISTER</button>
+                <button class="submit">REGISTER</button>
               </form>
           </div>
         </div>  

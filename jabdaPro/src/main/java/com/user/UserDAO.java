@@ -178,7 +178,7 @@ public class UserDAO {
 //	            datas.add(uto); // uto에 넣은 데이터들을 ArrayList인 datas안에 넣는부분
 //	         }
 	      } catch( SQLException e ) {
-	         System.out.println( "[에러] " + e.getMessage() );
+	         System.out.println( "[에러] : " + e.getMessage() );
 	      } finally {
 	         if( rs != null ) try { rs.close(); } catch( SQLException e ) {}
 	         if( pstmt != null ) try { pstmt.close(); } catch( SQLException e ) {}
@@ -211,7 +211,7 @@ public class UserDAO {
 			   return -1; // 아이디가 없음
 			
 		   }catch(Exception e) {
-			   System.out.println( "[에러] " + e.getMessage() );
+			   System.out.println( "[에러] : " + e.getMessage() );
 		   }
 		   return -2; // 데이터베이스 오류를 의미함
 	   }
@@ -227,7 +227,7 @@ public class UserDAO {
 		   
 		   try {
 			   conn = this.dataSource.getConnection();
-			   String sql = "select seq, user_nickname, user_email, user_password from user where user_email = ?";
+			   String sql = "select seq, user_nickname, user_email, user_pw from user where user_email = ?";
 			   pstmt = conn.prepareStatement(sql);
 			   pstmt.setString(1, userID);
 			   rs = pstmt.executeQuery();
@@ -250,7 +250,7 @@ public class UserDAO {
 				   
 			   } 
 		   }catch (Exception e) {
-			   System.out.println( "[에러] " + e.getMessage() );
+			   System.out.println( "[에러] : " + e.getMessage() );
 		   }
 		   return uto;
 	   }

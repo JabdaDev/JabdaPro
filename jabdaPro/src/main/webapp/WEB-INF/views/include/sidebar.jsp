@@ -63,12 +63,6 @@
           	 	out.println("</li>");
           	}
           %>
-          
-          
-          <li>
-            <a href="login.do"><span class="fa fa-sign-out mr-3"></span> Login </a>
-          </li>
-        </ul>
         <footer>
 
         </footer>
