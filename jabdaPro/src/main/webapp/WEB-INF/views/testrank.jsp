@@ -21,7 +21,7 @@
       <!-- Mainlogo Part -->
       <jsp:include page="/include/mainlogo.do"/>
       <!-- End Mainlogo part -->
-      <div class="test-contain">
+      <div class="test-content">
       	<div class="text-center">
       		<div class="test-detail mb-4">
 	          <table class="table">
@@ -37,6 +37,15 @@
 	            <tbody>
 	              <tr>
 	                <td>1</td>
+	                <td>간단한 MBTI</td>
+	                <td>잡다한 개발자</td>
+	                <td></td>
+	                <td>
+	                  <button class="btn btn-outline-primary">test</button>
+	                </td>
+	              </tr>
+	              <tr>
+	                <td>2</td>
 	                <td>간단한 MBTI</td>
 	                <td>잡다한 개발자</td>
 	                <td></td>

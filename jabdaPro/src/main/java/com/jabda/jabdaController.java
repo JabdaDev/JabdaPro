@@ -217,7 +217,7 @@ public class jabdaController {
 	/* mainlogo */
 	@RequestMapping( "/include/mainlogo.do" )
 	public ModelAndView mainlogo(HttpServletRequest request) {
-		System.out.println("mainlogo() 호출");
+		//System.out.println("mainlogo() 호출");
 		
 		ModelAndView modelAndView = new ModelAndView("/include/mainlogo");
 		return modelAndView;
@@ -226,7 +226,7 @@ public class jabdaController {
 	/* css part */
 	@RequestMapping( "/include/css.do" )
 	public ModelAndView css(HttpServletRequest request) {
-		System.out.println("css() 호출");
+		//System.out.println("css() 호출");
 		
 		ModelAndView modelAndView = new ModelAndView("/include/css");
 		return modelAndView;
@@ -235,9 +235,18 @@ public class jabdaController {
 	/* js part */
 	@RequestMapping("/include/js.do")
 	public ModelAndView js(HttpServletRequest request) {
-		System.out.println("js() 호출");
+		//System.out.println("js() 호출");
 		
 		ModelAndView modelAndView = new ModelAndView("/include/js");
+		return modelAndView;
+	}
+	
+	/* footer */
+	@RequestMapping("/include/footer.do")
+	public ModelAndView footer(HttpServletRequest request) {
+		System.out.println("footer() 호출");
+		
+		ModelAndView modelAndView = new ModelAndView("/include/footer");
 		return modelAndView;
 	}
 	

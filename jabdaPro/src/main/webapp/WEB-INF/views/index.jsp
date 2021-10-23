@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<jsp:include page="/include/css.do"/>
+	
 
   </head>
   <body>
@@ -53,6 +54,7 @@
             </div>
           </div>
         </div>
+		<jsp:include page="/include/footer.do"/>        
 
       </div>
     
