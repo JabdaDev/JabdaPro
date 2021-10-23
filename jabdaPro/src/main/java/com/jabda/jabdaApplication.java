@@ -25,7 +25,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  ******************************************/
 
 /* src/main/java에 새로운 패키지 생기면 아래 수정하기 */
-@SpringBootApplication(scanBasePackages = {"com.itmi", "com.user"})
+@SpringBootApplication(scanBasePackages = {"com.jabda", "com.user"})
 public class jabdaApplication {
 
 	public static void main(String[] args) {
