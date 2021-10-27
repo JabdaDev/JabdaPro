@@ -192,7 +192,9 @@ public class jabdaController {
 	@RequestMapping( "/include/sidebar.do" )
 	public ModelAndView sidebar(HttpServletRequest request) {
 		System.out.println( "sidebar() 호출" );
-
+		
+		
+		
 		// 로그인된 회원의 정보를 가져오고 보여주는 부분  
 				// 로그인 세션이 있으면 가져온다.
 				HttpSession httpSession = request.getSession(true);
@@ -257,6 +259,15 @@ public class jabdaController {
 		System.out.println("testrank() 호출");
 		
 		ModelAndView modelAndView = new ModelAndView("testrank");
+		return modelAndView;
+	}
+	
+	/* DevIntroduction */
+	@RequestMapping("DevIntroduction.do")
+	public ModelAndView Devintroduction(HttpServletRequest request) {
+		System.out.println("DevIntroduction() 호출");
+		
+		ModelAndView modelAndView = new ModelAndView("DevIntroduction");
 		return modelAndView;
 	}
 }

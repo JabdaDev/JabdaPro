@@ -3,12 +3,12 @@ body {
     padding: 0;
     font-family: sans-serif;
     background-image: url(../img/background.jpg);
+    background-position: center;
+    background-size: cover;
 }
 .login-wrap {
     height: 100%;
     width: 100%;
-    background-position: center;
-    background-size: cover;
     position: absolute;
 }
 .login-form-wrap {

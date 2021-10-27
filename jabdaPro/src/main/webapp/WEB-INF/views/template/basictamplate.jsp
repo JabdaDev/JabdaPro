@@ -3,14 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% String rootPath = request.getContextPath(); %>
-
-<%
-	ArrayList<testTO> tests = (ArrayList)request.getAttribute("test_list");
-	
-	StringBuilder test = new StringBuilder();
-	
-	
-%>    
+   
 <!doctype html>
 <html lang="ko">
   <head>

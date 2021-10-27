@@ -8,29 +8,21 @@
 	UserTO uto = (UserTO)request.getAttribute("uto");
 	String username = null;
 	String rank = null;
-	String rankcheck = "admin";
 	
 	if(uto != null) { //uto가 null이 아닌경우만 username 의 경우만 불러오는것
-		System.out.println("닉네임: " + uto.getNickname());
-		System.out.println("등급: " + uto.getRank());
-		rank = uto.getRank();
+		System.out.println("닉네임: " +uto.getNickname());
 		username = uto.getNickname();
-		
-		
+		rank = uto.getRank();
 		
 		out.println("<script type='text/javascript'>");
 		out.println("var nickname = '" + username + "';");
-		out.println("var rank = '" + rank + "';");
 		out.println("</script>");
 	}else{
 		out.println("<script type='text/javascript'>");
 		out.println("var nickname = '';");
-		out.println("var rank = '';");
 		out.println("</script>");
 	}
-	System.out.println(rank);
-	System.out.println(rankcheck);
-	
+
 %>
 	<nav id="sidebar">
 		<div class="custom-menu">
@@ -52,22 +44,19 @@
 	  		</div>
         <ul class="list-unstyled components mb-5">
           <li class="active">
-            <a href="main.do"><span class="fa fa-home mr-3"></span> Home </a>
+            <a href="main.do"><span class="fa fa-home mr-3"></span> Admin Home </a>
           </li>
           <li>
-              <a href="community.html"><span class="fa fa-comments mr-3 notif"><small class="d-flex align-items-center justify-content-center">3</small></span> Community(커뮤니티) </a>
+              <a href="usermanager.do"><span class="fa fa-user-circle mr-3 notif"></span> User Manager </a>
           </li>
           <li>
-            <a href="event.html"><span class="fa fa-gift mr-3"></span> Event(이벤트) </a>
+            <a href="addtest.do"><span class="fa fa-gift mr-3"></span> Test Manager </a>
           </li>
           <li>
-            <a href="testrank.do"><span class="fa fa-trophy mr-3"></span> Top Test</a>
+            <a href="addevent.do"><span class="fa fa-gift mr-3"></span> Event Manager </a>
           </li>
           <li>
-            <a href="testqna.html"><span class="fa fa-cog mr-3"></span> QnA(고객센터) </a>
-          </li>
-          <li>
-            <a href="DevIntroduction.do"><span class="fa fa-support mr-3"></span> 개발자소개(잡다한) </a>
+            <a href="adminqna.do"><span class="fa fa-cog mr-3"></span> QnA Manager </a>
           </li>
           <%
           	if(username != null) {
@@ -80,19 +69,6 @@
           	 	out.println("</li>");
           	}
           %>
-          <% if( rank != null ) { %>
-          	<% if( rank == rankcheck ) { %>
-	          		<li>
-	            		<a href="devpage.do"><span class="fa fa-support mr-3"></span> Dev Page </a>
-	          		</li>
-	          <% } else { %>
-	          		<li>
-	          			<a href="mypage.do"><span class="fa fa-support mr-3"></span> My Page </a>
-	          		</li>
-	          <% } %>
-          <% } else { %>
-	      
-	      <% } %>    
         <footer>
 
         </footer>

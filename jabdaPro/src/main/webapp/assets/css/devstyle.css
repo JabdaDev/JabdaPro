@@ -1,13 +1,10 @@
 body {
-    background-image: url(/img/background.jpg);
-}
-
-.dev-wrap {
+    background-image: url(../img/background.jpg);
     height: 100%;
     width: 100%;
     background-position: center;
     background-size: cover;
-    position: absolute;
+    position: relative;
 }
 
 .dev-logo .jabda-img {

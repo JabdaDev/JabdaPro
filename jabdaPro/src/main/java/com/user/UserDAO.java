@@ -43,7 +43,7 @@ public class UserDAO {
 	        
 	        
 			conn = this.dataSource.getConnection();
-			String sql = "insert into user values(0, ?, ?, ?, '일반')";
+			String sql = "insert into user values(0, ?, ?, ?, 'general')";
 			pstmt = conn.prepareStatement( sql );
 			pstmt.setString( 1, to.getNickname() );
 			pstmt.setString( 2, to.getEmail() );
@@ -227,7 +227,7 @@ public class UserDAO {
 		   
 		   try {
 			   conn = this.dataSource.getConnection();
-			   String sql = "select seq, user_nickname, user_email, user_pw from user where user_email = ?";
+			   String sql = "select seq, user_nickname, user_email, user_pw, user_rank from user where user_email = ?";
 			   pstmt = conn.prepareStatement(sql);
 			   pstmt.setString(1, userID);
 			   rs = pstmt.executeQuery();
@@ -243,6 +243,7 @@ public class UserDAO {
 				   uto.setNickname(rs.getString("user_nickname"));
 				   uto.setEmail(rs.getString("user_email"));
 				   uto.setPassword(rs.getString("user_pw"));
+				   uto.setRank(rs.getString("user_rank"));
 				   
 				   
 //				   System.out.println(rs.getString("nickname")); // 아이디 출력되는거 확인
