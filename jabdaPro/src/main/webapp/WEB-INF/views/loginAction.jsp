@@ -28,18 +28,32 @@ request.setCharacterEncoding("UTF-8");
 	UserDAO userDAO = new UserDAO();
 // 	int result = userDAO.login(user.getUserID(), user.getUserPassword());
 	int result = (Integer)request.getAttribute("flag");
-
+	
+	
     //회원 정보를 불러오는 부분
     
     UserTO uto = (UserTO)request.getAttribute("uto");
     String username = uto.getNickname();
-
+	String rank = uto.getRank();
+    
+	System.out.println("loginAction :" + rank);
+	
 	if(result == 0) {
-		PrintWriter script = response.getWriter();
-		out.println("<script>");
-		out.println("alert('"+ username +"님 환영합니다.')");
-		out.println("location.href='/main.do'");
-		out.println("</script>");
+		if( "admin".equals(rank)){
+			PrintWriter script = response.getWriter();
+			out.println("<script>");
+			out.println("alert('"+ username +"님 환영합니다.')");
+			out.println("location.href='/admin.do'");
+			out.println("</script>");
+		} else {
+			PrintWriter script = response.getWriter();
+			out.println("<script>");
+			out.println("alert('"+ username +"님 환영합니다.')");
+			out.println("location.href='/main.do'");
+			out.println("</script>");
+		}
+		
+		
 		
 	}
 	else if (result == 1 ) {

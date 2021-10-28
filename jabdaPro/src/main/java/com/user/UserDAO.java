@@ -43,7 +43,7 @@ public class UserDAO {
 	        
 	        
 			conn = this.dataSource.getConnection();
-			String sql = "insert into user values(0, ?, ?, ?, 'general')";
+			String sql = "insert into user values(0, ?, ?, ?, now(), 'general')";
 			pstmt = conn.prepareStatement( sql );
 			pstmt.setString( 1, to.getNickname() );
 			pstmt.setString( 2, to.getEmail() );

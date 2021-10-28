@@ -216,6 +216,26 @@ public class jabdaController {
 		return modelAndView;
 	}
 	
+	/* admin sidebar */
+	@RequestMapping("/include/adminsidebar.do")
+	public ModelAndView adminsidebar(HttpServletRequest request) {
+		System.out.println("adminsidebar() 호출");
+		
+		HttpSession httpSession = request.getSession(true);
+		System.out.println( "sidebar() 호출1" );
+		UserTO uto =  (UserTO)httpSession.getAttribute("user"); // 로그인 정보를 가져오는것
+		int flag = 1; // 기본 : 실패
+			if(uto != null) {
+				flag = 0; // 로그인 성공
+				System.out.println("로그인이 성공했습니다. : " + flag);
+			}
+		
+		ModelAndView modelAndView = new ModelAndView("include/adminsidebar");
+		modelAndView.addObject("uto", uto);
+		
+		return modelAndView;
+	}
+	
 	/* mainlogo */
 	@RequestMapping( "/include/mainlogo.do" )
 	public ModelAndView mainlogo(HttpServletRequest request) {
@@ -270,4 +290,9 @@ public class jabdaController {
 		ModelAndView modelAndView = new ModelAndView("DevIntroduction");
 		return modelAndView;
 	}
+	
+	
+	
+	
+	
 }

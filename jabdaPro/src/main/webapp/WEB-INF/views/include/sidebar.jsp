@@ -8,7 +8,6 @@
 	UserTO uto = (UserTO)request.getAttribute("uto");
 	String username = null;
 	String rank = null;
-	String rankcheck = "admin";
 	
 	if(uto != null) { //uto가 null이 아닌경우만 username 의 경우만 불러오는것
 		System.out.println("닉네임: " + uto.getNickname());
@@ -29,7 +28,6 @@
 		out.println("</script>");
 	}
 	System.out.println(rank);
-	System.out.println(rankcheck);
 	
 %>
 	<nav id="sidebar">
@@ -81,9 +79,9 @@
           	}
           %>
           <% if( rank != null ) { %>
-          	<% if( rank == rankcheck ) { %>
+          	<% if( "admin".equals(rank) ) { %>
 	          		<li>
-	            		<a href="devpage.do"><span class="fa fa-support mr-3"></span> Dev Page </a>
+	            		<a href="admin.do"><span class="fa fa-support mr-3"></span> Dev Page </a>
 	          		</li>
 	          <% } else { %>
 	          		<li>

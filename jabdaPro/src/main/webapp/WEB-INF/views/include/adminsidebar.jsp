@@ -58,6 +58,9 @@
           <li>
             <a href="adminqna.do"><span class="fa fa-cog mr-3"></span> QnA Manager </a>
           </li>
+          <li>
+            <a href="main.do"><span class="fa fa-cog mr-3"></span> Test Homepage </a>
+          </li>
           <%
           	if(username != null) {
           		out.println("<li>");
