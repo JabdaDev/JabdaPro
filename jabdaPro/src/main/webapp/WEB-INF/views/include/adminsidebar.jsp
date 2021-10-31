@@ -47,7 +47,7 @@
             <a href="main.do"><span class="fa fa-home mr-3"></span> Admin Home </a>
           </li>
           <li>
-              <a href="usermanager.do"><span class="fa fa-user-circle mr-3 notif"></span> User Manager </a>
+              <a href="adminuser.do"><span class="fa fa-user-circle mr-3 notif"></span> User Manager </a>
           </li>
           <li>
             <a href="addtest.do"><span class="fa fa-gift mr-3"></span> Test Manager </a>

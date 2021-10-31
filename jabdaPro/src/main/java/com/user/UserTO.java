@@ -8,5 +8,6 @@ public class UserTO {
 	private String nickname;
 	private String email;
 	private String password;
+	private String date;
 	private String rank;
 }

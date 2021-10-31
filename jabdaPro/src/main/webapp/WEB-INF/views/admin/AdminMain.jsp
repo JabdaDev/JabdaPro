@@ -1,7 +1,28 @@
+<%@page import="com.user.UserTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% String rootPath = request.getContextPath(); %>
-   
+
+<%
+	ArrayList<UserTO> datas = (ArrayList)request.getAttribute( "member_list" );
+
+	StringBuilder user = new StringBuilder();
+	
+	for( UserTO to : datas ){
+    	String nickname = to.getNickname();
+    	String email = to.getEmail();
+    	String rank =  to.getRank();
+    	String date = to.getDate();
+    	
+    	user.append("<tr>");
+    	user.append("	<td>" + nickname + "</td>");
+    	user.append("	<td>" + email + "</td>");
+    	user.append("	<td>" + rank + "</td>");
+    	user.append("	<td>" + date + "</td>");
+    	user.append("</tr>");
+    }
+%>   
 <!doctype html>
 <html lang="ko">
   <head>
@@ -9,7 +30,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<jsp:include page="/include/css.do"/>
-	
+	<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
 
   </head>
   <body>
@@ -51,9 +72,10 @@
                             <table id="QnatablesSimple">
                               <thead>
                                 <tr>
-                                  <th>작성자</th>
-                                  <th>제목</th>
-                                  <th>작성일</th>
+                                  <th>Nickname</th>
+                                  <th>Email(ID)</th>
+                                  <th>Rank</th>
+                                  <th>Join Day</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -70,13 +92,13 @@
                               회원현황
                           </div>
                           <div class="card-body">
-                            <table id="datatablesSimple1">
+                            <table id="VisitortablesSimple">
                               <thead>
                                 <tr>
-                                  <th>ID</th>
-                                  <th>Name</th>
-                                  <th>회원구분</th>
-                                  <th>가입일</th>
+                                  <th>Nickname</th>
+                                  <th>Email(ID)</th>
+                                  <th>Rank</th>
+                                  <th>Join Day</th>
                                 </tr>
                               </thead>
                               <tfoot>
@@ -88,7 +110,7 @@
                                 </tr>
                               </tfoot>
                               <tbody>
-                                
+                                <%=user %>
                               </tbody>
                             </table>
                           </div>
@@ -103,6 +125,7 @@
     </div>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 	<script src="<%=rootPath %>/assets/js/datatables.js"></script>
     <jsp:include page="/include/js.do"/>
     <script type="text/javascript">

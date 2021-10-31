@@ -64,6 +64,41 @@ public class UserDAO {
 		return flag;
 	}
 	
+	/* admin 유저 정보 */
+	public ArrayList<UserTO> memberlist(){
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		ArrayList<UserTO> datas = new ArrayList<UserTO>();
+		
+		try {
+			conn = this.dataSource.getConnection();
+			String sql = "";
+			sql = "select seq, user_nickname, user_email, user_date	, user_rank from user";
+			
+			pstmt = conn.prepareStatement( sql );
+			rs = pstmt.executeQuery();
+			while( rs.next() ) {
+				UserTO to = new UserTO();
+				to.setNickname(rs.getString("user_nickname"));
+				to.setEmail(rs.getString("user_email"));
+				to.setDate(rs.getString("user_date"));
+				to.setRank(rs.getString("user_rank"));
+				
+				datas.add( to );
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println( "[에러] " + e.getMessage() );
+		} finally {
+			if( rs != null ) try { rs.close(); } catch( SQLException e ) {}
+			if( pstmt != null ) try { pstmt.close(); } catch( SQLException e ) {}
+			if( conn != null ) try { conn.close(); } catch( SQLException e ) {}
+		}
+		return datas;
+	}
+	
 	/* 이메일 중복체크 */
 	public int email_check(UserTO to) {
 		Connection conn = null;
