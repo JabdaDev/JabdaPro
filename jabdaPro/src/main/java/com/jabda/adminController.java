@@ -45,7 +45,7 @@ public class adminController {
 		
 		
 		
-		ModelAndView modelAndView = new ModelAndView("AdminUser");
+		ModelAndView modelAndView = new ModelAndView("admin/AdminUser");
 		return modelAndView;
 	}
 }

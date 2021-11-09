@@ -290,4 +290,22 @@ public class UserDAO {
 		   }
 		   return uto;
 	   }
+	   
+	   /* 유저 수 */
+	   public int usernum(String date) {
+		   Connection conn = null;
+		   PreparedStatement pstmt = null;
+		   ResultSet rs = null;
+		   
+		   try {
+			String sql = "select count(seq) from user where user_date = ?";
+			   pstmt = conn.prepareStatement(sql);
+			   pstmt.setString(1, date);
+			   rs = pstmt.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("[에러] :" + e.getMessage());
+		}
+		   return -1;
+	   }
 }

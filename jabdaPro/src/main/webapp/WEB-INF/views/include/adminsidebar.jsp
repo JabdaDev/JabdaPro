@@ -44,7 +44,7 @@
 	  		</div>
         <ul class="list-unstyled components mb-5">
           <li class="active">
-            <a href="main.do"><span class="fa fa-home mr-3"></span> Admin Home </a>
+            <a href="admin.do"><span class="fa fa-home mr-3"></span> Admin Home </a>
           </li>
           <li>
               <a href="adminuser.do"><span class="fa fa-user-circle mr-3 notif"></span> User Manager </a>
