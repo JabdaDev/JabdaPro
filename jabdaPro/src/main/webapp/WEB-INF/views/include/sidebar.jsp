@@ -30,6 +30,11 @@
 	System.out.println(rank);
 	
 %>
+<head>
+<meta name ="google-signin-client_id" content="141540944374-oa989fab02dhp22fo6efqndj5b8mgu4s.apps.googleusercontent.com">
+</head>
+
+
 	<nav id="sidebar">
 		<div class="custom-menu">
 			<button type="button" id="sidebarCollapse" class="btn btn-primary">

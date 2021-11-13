@@ -32,7 +32,7 @@
               <div class="social-icons">
                 <img src="<%=rootPath %>/assets/img/fb.png" alt="facebook">
                 <img src="<%=rootPath %>/assets/img/tw.png" alt="twitter">
-                <img src="<%=rootPath %>/assets/img/gl.png" alt="google">
+                <img src="<%=rootPath %>/assets/img/gl.png" href="javascript:void(0)" alt="google">
               </div>
               <form id="login" action="loginAction.do" class="login-input-group" method="post">
                 <input type="text" class="login-input-field" placeholder="User name or Email" id="email" name="email" required>

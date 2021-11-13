@@ -81,6 +81,7 @@ public class UserDAO {
 			rs = pstmt.executeQuery();
 			while( rs.next() ) {
 				UserTO to = new UserTO();
+				to.setSeq(rs.getString("seq"));
 				to.setNickname(rs.getString("user_nickname"));
 				to.setEmail(rs.getString("user_email"));
 				to.setDate(rs.getString("user_date"));
@@ -98,6 +99,9 @@ public class UserDAO {
 		}
 		return datas;
 	}
+	
+	/* 유저 관리 modal 부분 data 가져오기 */
+	
 	
 	/* 이메일 중복체크 */
 	public int email_check(UserTO to) {
