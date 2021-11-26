@@ -58,6 +58,7 @@ public class adminController {
 		return modelAndView;
 	}
 	
+	/* 유저 등급 및 재설정 실행 부분 */
 	@RequestMapping("rank_modify_ok.do")
 	public ModelAndView rank_modify(HttpServletRequest request) {
 		System.out.println("rank_modify() 호출");
@@ -67,14 +68,31 @@ public class adminController {
 		to.setRank(request.getParameter("rank"));
 		
 		adminDAO adao = new adminDAO(dataSource);
-		int flag = adao.rankModifyOK(to);
+		
 		
 		ModelAndView modelAndView = new ModelAndView("admin/rank_modify_ok");
 		
-		modelAndView.addObject("flag", flag);
+		//modelAndView.addObject("flag", flag);
 		modelAndView.addObject("to", to);
 		
 		return modelAndView;
 		
+	}
+	
+	@RequestMapping("member_modify.do")
+	public ModelAndView member_modify(HttpServletRequest request) {
+		System.out.println("member_modify()호출");
+		
+		UserTO to = new UserTO();
+		to.setEmail(request.getParameter("email"));
+		
+		adminDAO adao = new adminDAO(dataSource);
+		to = adao.memberview(to);
+		
+		ModelAndView modelAndView = new ModelAndView("admin/member_modify");
+		modelAndView.addObject("to", to);
+		
+		return modelAndView;
+	
 	}
 }

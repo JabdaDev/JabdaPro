@@ -7,6 +7,7 @@
 
 <%
 	ArrayList<UserTO> datas = (ArrayList)request.getAttribute("user_list");
+		
 
 	StringBuilder user = new StringBuilder();
 	
@@ -23,17 +24,9 @@
 		user.append("	<td>" + email + "</td>");
 		user.append("	<td>" + date + "</td>");
 		user.append("<td>");
-		user.append("<form novalidate action='rank_modify_ok.do?email=" + email + "' method='post' name='redit' class='ng-untouched ng-pristine ng-valid'>");
-			user.append("<select name='rank' id='rank' class='form-select btn-sm btn-outline-primary'>");
-				user.append("<option selected>" + rank + "</option>");
-				user.append("<option>--------</option>");
-				user.append("<option value='general'>general</option>");
-				user.append("<option value='admin'>admin</option>");
-			user.append("</select>");
-			user.append("<div style='margin-top:1px; float:bottom;'><a type='button' id='btnchange' class='btn btn-outline-primary'>변경</a></div>");
-		user.append("</form>");
+		user.append("	<a type='button' href='member_modify.do?email = " + email +"' class='btn btn-outline-primary'>수정</a> ");
 		user.append("</td>");
-		user.append("<tr>");
+		user.append("<tr>");	
 	}
 %>
    
@@ -92,45 +85,10 @@
     
 
     </div>
-    
-    <div class="modal fade" id="my_modal" tabindex="-1" role="dialog" aria-labelledby="my_modalLabel">
-	<div class="modal-dialog" role="dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal Title</h4>
-        </div>
-        	<div class="modal-body">
-           		Modal Body
-            	<input type="hidden" name="hiddenValue" id="hiddenValue" value="" />
-        	</div>
-        	<div class="modal-footer">
-            	<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-            	<button type="button" class="btn btn-primary">Yes</button>
-        	</div>
-    	</div>
-	</div>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 	<script src="<%=rootPath %>/assets/js/datatables.js"></script>
     <jsp:include page="/include/js.do"/>
-    
-    <script type="text/javascript">
-    $(document).ready(function() {
-
-    	  $('a[data-toggle=modal], button[data-toggle=modal]').click(function () {
-
-    	    var data_id = '';
-
-    	    if (typeof $(this).data('id') !== 'undefined') {
-
-    	      data_id = $(this).data('id');
-    	    }
-
-    	    $('#my_element_id').val(data_id);
-    	  })
-    	});
-    </script>
   </body>
 </html>
